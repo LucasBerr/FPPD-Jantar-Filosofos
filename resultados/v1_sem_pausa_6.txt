@@ -1,0 +1,10 @@
+Go go1.27.1 | linux/amd64 | GOMAXPROCS=2 | NumCPU=2
+----------------------------------------------------
+Versão V1 | 5 filósofos x 20 ciclos | pensa 20ms, come 30ms
+Tempo total de execução ........   1538.59 ms
+Tempo médio de espera (garfos) .     25.16 ms
+Maior tempo de espera ..........     60.56 ms
+Máx. comendo simultaneamente ...         2
+Ciclos por filósofo ............ [20 20 20 20 20]
+----------------------------------------------------
+CSV,V1,1538.59,25.16,60.56,2,20,20,20,20,20

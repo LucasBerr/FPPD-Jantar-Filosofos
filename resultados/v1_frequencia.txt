@@ -1,0 +1,1 @@
+V1 sem pausa: 20 execuções, 20 concluíram, 0 travaram em deadlock

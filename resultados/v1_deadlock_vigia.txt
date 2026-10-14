@@ -1,0 +1,26 @@
+Go go1.27.1 | linux/amd64 | GOMAXPROCS=2 | NumCPU=2
+
+[F0]  [F1]  [F2]  [F3]  [F4]
+V1 com pausa de 5ms entre os garfos
+       T1
+             T1
+                   T1
+                         T1
+ T1
+ g0
+             g2
+       g1
+                   g3
+                         g4
+==================== DEADLOCK DETECTADO ====================
+Nenhum filósofo comeu nos últimos 2 s (refeições até aqui: 0)
+
+Filósofo | Garfos que possui | Esperando pelo garfo | Ciclos
+   F0    | [0]               | 1 (com F1)           | 0
+   F1    | [1]               | 2 (com F2)           | 0
+   F2    | [2]               | 3 (com F3)           | 0
+   F3    | [3]               | 4 (com F4)           | 0
+   F4    | [4]               | 0 (com F0)           | 0
+
+Cadeia de espera: F0 -> F1 -> F2 -> F3 -> F4 -> F0  (ciclo fechado: espera circular)
+============================================================

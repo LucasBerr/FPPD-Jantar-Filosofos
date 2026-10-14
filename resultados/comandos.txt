@@ -1,0 +1,1 @@
+comando: go build -o filosofos .  &&  ./filosofos -v <versao>

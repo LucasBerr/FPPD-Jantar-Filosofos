@@ -1,0 +1,5 @@
+go version go1.27.1 linux/amd64
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+CPU(s):                                  2
+Model name:                              AMD EPYC 7763 64-Core Processor
+x86_64

@@ -1,0 +1,85 @@
+Go go1.27.1 | linux/amd64 | GOMAXPROCS=2 | NumCPU=2
+V1 com pausa de 5ms entre os garfos
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [sync.WaitGroup.Wait]:
+sync.runtime_SemacquireWaitGroup(0x3f48ecd0c090?, 0xe0?)
+	/usr/local/go/src/runtime/sema.go:114 +0x2e
+sync.(*WaitGroup).Wait(0x3f48ecd02060)
+	/usr/local/go/src/sync/waitgroup.go:206 +0x85
+main.V1.func1(0x3f48ecd20000, 0x4c4b40, 0x0)
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:92 +0x2af
+main.V1(0x4c4b40, 0x0)
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:93 +0x74
+main.main()
+	/workspaces/FPPD-Jantar-Filosofos/main.go:41 +0x36e
+
+goroutine 18 [sync.Mutex.Lock]:
+internal/sync.runtime_SemacquireMutex(0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/sema.go:95 +0x25
+internal/sync.(*Mutex).lockSlow(0x3f48ecd22008)
+	/usr/local/go/src/internal/sync/mutex.go:149 +0x15a
+internal/sync.(*Mutex).Lock(...)
+	/usr/local/go/src/internal/sync/mutex.go:70
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:46
+main.V1.func1.1(0x0)
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:58 +0x2d4
+created by main.V1.func1 in goroutine 1
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:43 +0x105
+
+goroutine 19 [sync.Mutex.Lock]:
+internal/sync.runtime_SemacquireMutex(0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/sema.go:95 +0x25
+internal/sync.(*Mutex).lockSlow(0x3f48ecd22010)
+	/usr/local/go/src/internal/sync/mutex.go:149 +0x15a
+internal/sync.(*Mutex).Lock(...)
+	/usr/local/go/src/internal/sync/mutex.go:70
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:46
+main.V1.func1.1(0x1)
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:58 +0x2d4
+created by main.V1.func1 in goroutine 1
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:43 +0x105
+
+goroutine 20 [sync.Mutex.Lock]:
+internal/sync.runtime_SemacquireMutex(0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/sema.go:95 +0x25
+internal/sync.(*Mutex).lockSlow(0x3f48ecd22018)
+	/usr/local/go/src/internal/sync/mutex.go:149 +0x15a
+internal/sync.(*Mutex).Lock(...)
+	/usr/local/go/src/internal/sync/mutex.go:70
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:46
+main.V1.func1.1(0x2)
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:58 +0x2d4
+created by main.V1.func1 in goroutine 1
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:43 +0x105
+
+goroutine 21 [sync.Mutex.Lock]:
+internal/sync.runtime_SemacquireMutex(0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/sema.go:95 +0x25
+internal/sync.(*Mutex).lockSlow(0x3f48ecd22020)
+	/usr/local/go/src/internal/sync/mutex.go:149 +0x15a
+internal/sync.(*Mutex).Lock(...)
+	/usr/local/go/src/internal/sync/mutex.go:70
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:46
+main.V1.func1.1(0x3)
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:58 +0x2d4
+created by main.V1.func1 in goroutine 1
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:43 +0x105
+
+goroutine 22 [sync.Mutex.Lock]:
+internal/sync.runtime_SemacquireMutex(0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/sema.go:95 +0x25
+internal/sync.(*Mutex).lockSlow(0x3f48ecd22000)
+	/usr/local/go/src/internal/sync/mutex.go:149 +0x15a
+internal/sync.(*Mutex).Lock(...)
+	/usr/local/go/src/internal/sync/mutex.go:70
+sync.(*Mutex).Lock(...)
+	/usr/local/go/src/sync/mutex.go:46
+main.V1.func1.1(0x4)
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:58 +0x2d4
+created by main.V1.func1 in goroutine 1
+	/workspaces/FPPD-Jantar-Filosofos/v1_deadlock.go:43 +0x105
